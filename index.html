@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+    <title>Encurtador de URL</title>
+</head>
+<body>
+    <h1>URL Shortener SaaS</h1>
+    <form method="post">
+        <input type="text" name="url" placeholder="Cole sua URL aqui" required>
+        <button type="submit">Encurtar</button>
+    </form>
+
+    {% if short_url %}
+    <p>URL encurtada: <a href="/{{ short_url }}" target="_blank">{{ request.host_url }}{{ short_url }}</a></p>
+    {% endif %}
+</body>
+</html>
